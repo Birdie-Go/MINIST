@@ -59,9 +59,6 @@ for epoch in range(epochs):
         _, pred = torch.max(outputs.data, 1) # 输出的结果是一个大小为10的数组
                                             # 我们获取最大值和最大值的索引，后者表示预测结果
         optimizer.zero_grad() # 梯度置零
-        print(outputs.data)
-        print(y_train.data)
-        break
         loss = loss_F(outputs, y_train) # 计算输出结果和标签损失
         loss.backward() # 根据梯度反向传播
         optimizer.step() # 根据梯度更新所有的参数
